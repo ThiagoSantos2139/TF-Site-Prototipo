@@ -20,6 +20,7 @@ body{
     --footer: linear-gradient(0deg, #2f2f2f 20%, #4d00d5 85%, #14ffff);
     --footertxt: white;
     --devtex: white;
+    --blocohover: #14ffff;
 }
 
 .backgroundmain{
@@ -138,6 +139,39 @@ main .container{
     font-size: 20px;
 }
 
+.contato .container{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.contato .bloco{
+    width: 30%;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.contato .bloco:hover{
+    box-shadow: 0px 10px 60px 8px var(--blocohover);
+}
+
+.contato .bloco img{
+    width: 60px;
+}
+
+.contato .bloco .titulo{
+    margin: 13px 0;
+    font-weight: 600;
+}
+
+
+
+
+
+
 .backgroundfooter{
     background: var(--footer);
 }
@@ -250,6 +284,14 @@ footer .container li{
     .patrocina .container .card img{
         width: 100%;
         align-self: center;
+    }
+
+    .contato .container{
+        flex-direction: column;
+    }
+    
+    .contato .bloco{
+        width: 100%;
     }
 }
 
