@@ -13,19 +13,13 @@ body{
 }
 
 :root{
-    --header: #250b7b;
     --maintxt: #ffffff;
     --navegatxt: #ffffff;
     --botaomain: #ffffff;
-    --gradientmain: linear-gradient( 0deg, green, #3381a5, #250b7b);
-    --footer: green;
-    --footertxt: rgb(0, 0, 0);
-    --devline: black;
+    --gradientmain: linear-gradient(0deg, #14ffff, #4d00d5 20%, #2f2f2f 60%);
+    --footer: linear-gradient(0deg, #2f2f2f 20%, #4d00d5 85%, #14ffff);
+    --footertxt: white;
     --devtex: white;
-}
-
-.backgroundheader{
-    background: var(--header);
 }
 
 .backgroundmain{
@@ -51,7 +45,7 @@ nav{
 }
 
 .logo a img{
-    width: 150px;
+    width: 100%;
 }
 
 .ul{
@@ -76,7 +70,7 @@ main .container{
 }
 
 .main-text{
-    width: 50%;
+    width: 45%;
     color: var(--maintxt);
 }
 
@@ -93,10 +87,12 @@ main .container{
     align-items: center;
     margin-top: 20px;
     font-size: 20px;
+    text-align: justify;
 }
 
 .main-img{
     width: 50%;
+    margin-bottom: 20px;
 }
 
 .main-img img{
@@ -116,6 +112,7 @@ main .container{
     width: 100%;
     border-radius: 10px;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .patrocina .container{
@@ -124,21 +121,25 @@ main .container{
     justify-content: space-between;
 }
 
-.card{
-    display: flex;
+.patrocina .card{
     width: 50%;
 }
 
-.card img{
+.patrocina .card p{
+    width: 100%;
+}
+
+.patrocina .card img{
     width: 90%;
 }
 
 .card p{
+    text-align: justify;
     font-size: 20px;
 }
 
 .backgroundfooter{
-    background-color: var(--footer);
+    background: var(--footer);
 }
 
 footer .container ul{
@@ -153,6 +154,11 @@ footer .container h1{
     font-weight: 800;
 }
 
+footer .container h1,
+footer .container h2{
+    color: var(--footertxt);
+}
+
 footer .container img{
     margin-right: 10px;
     width: 30px;
@@ -162,13 +168,8 @@ footer .container li{
     margin: 10px 0;
 }
 
-footer .container a{
-    color: var(--footertxt);
-}
-
 .desenvolvedor{
     align-items: center;
-    background-color: var(--devline);
     color: var(--devtex);
     display: flex;
     justify-content: center;
@@ -177,14 +178,27 @@ footer .container a{
     text-align: center;
 }
 
+.desenvolvedor p a:link{
+    color: red;
+}
+
+.desenvolvedor p a:visited{
+    color: var(--devtex);
+}
+
+.desenvolvedor p a:hover{
+    color: red;
+}
+
 /* responsividade */
-@media (max-width: 1050px){
+@media (max-width: 1180px){
     .menu-icon{
         display: block;
     }
+
     .ul{
         position: fixed;
-        background: var(--header);
+        background: var(--gradientmain);
         top: 0;
         width: 100%;
         height: 100%;
@@ -193,27 +207,49 @@ footer .container a{
         flex-direction: column;
         justify-content: center;
     }
+
     .ul li{
         font-size: 40px;
         margin: 20px;
     }
+
     .ul.ativo{
         left: 0;
     }
+
     main .container{
         flex-direction: column;
         padding-top: 20px;
     }
+
     main .container .main-img,
     main .container .main-text{
         width: 100%;
         text-align: center;
     }
+
     main .container .main-text h1{
         font-size: 4rem;
     }
+
     main .container .main-text div{
         justify-content: center;
+    }
+
+    .patrocina .container{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .patrocina .container .card{
+        width: 100%;
+    }
+
+    .patrocina .container .card img{
+        width: 100%;
+        align-self: center;
     }
 }
 
