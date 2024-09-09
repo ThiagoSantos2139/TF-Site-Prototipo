@@ -10,6 +10,10 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../Imagens/fundo.png');
+    background-repeat: no-repeat;
 }
 
 :root{
@@ -47,17 +51,17 @@ nav{
     width: 90%;
 }
 
-.ul{
+ul{
     display: flex;
     align-items: center;
 }
 
-.ul li{
+ul li{
     margin: 0 35px;
     font-weight: 400;
 }
 
-.ul li a{
+ul li a{
     color: var(--navegatxt);
 }
 
@@ -73,7 +77,8 @@ main .container{
     color: var(--maintxt);
 }
 
-.main-textcrono{
+.main-textcrono,
+.main-textpatro{
     width: 95%;
     color: var(--maintxt);
     text-align: center;
@@ -81,24 +86,16 @@ main .container{
 }
 
 .main-text h1,
-.main-textcrono h1{
+.main-textcrono h1,
+.main-textpatro h1{
     font-size: 4.5rem;
     font-weight: 800;
 }
 
 .main-text h2,
-.main-textcrono h2{
+.main-textcrono h2,
+.main-textpatro h2{
     font-size: 2rem;
-}
-
-.main-text div,
-.main-textcrono div{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    font-size: 20px;
-    text-align: justify;
-    margin-bottom: 20px;
 }
 
 .main-img{
@@ -147,8 +144,8 @@ main .container{
 }
 
 .card p{
-    text-align: justify;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .contato{
@@ -162,7 +159,7 @@ main .container{
 }
 
 .contato .bloco{
-    width: 30%;
+    width: 22%;
     cursor: pointer;
     padding: 30px;
     border-radius: 15px;
@@ -209,9 +206,127 @@ main .container{
     box-shadow: 0px 10px 60px 8px var(--blocohover);
 }
 
+.carousel{
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
 
+.slides{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
 
+.slide{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    display: none;
+}
 
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navigation{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation label{
+    width: 15px;
+    height: 15px;
+    background-color: #000000;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#slide1:checked ~ .slides .slide:nth-child(1),
+#slide2:checked ~ .slides .slide:nth-child(2),
+#slide3:checked ~ .slides .slide:nth-child(3){
+    display: block;
+}
+
+.patrocinadores{
+    background: var(--contaback);
+}
+
+.patrocinadores .container{
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.gold{
+    border-radius: 30px;
+    background-color: rgb(246, 195, 13);
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 4rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.silver{
+    border-radius: 30px;
+    background-color: rgb(115, 115, 115);
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.bronze{
+    border-radius: 30px;
+    background-color: #cd7f32;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.organizacao{
+    background: var(--contaback);
+}
+
+.organizacao .container{
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.organizacao .area{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.organizacao .area h1{
+    width: 95%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+
+.organizacao h2 a:link{
+    color: black;
+}
+
+.organizacao h2 a:visited{
+    color: black;
+}
+
+.organizacao h2 a:hover{
+    color: blue;
+}
 
 footer .container ul{
     width: 100%;
@@ -262,6 +377,16 @@ footer .container li{
 }
 
 /* responsividade */
+@media (max-width: 1360px){
+    .cronograma .dias ul{
+        display: contents;
+    }
+
+    .cronograma .cardcrono{
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 1180px){
     .menu-icon{
         display: block;
@@ -295,13 +420,15 @@ footer .container li{
 
     main .container .main-img,
     main .container .main-text,
-    main .container .main-textcrono{
+    main .container .main-textcrono,
+    main .container .main-patro{
         width: 100%;
         text-align: center;
     }
 
     main .container .main-text h1,
-    main .container .main-textcrono h1{
+    main .container .main-textcrono h1,
+    main .container .main-patro h1{
         font-size: 4rem;
     }
 
@@ -332,14 +459,6 @@ footer .container li{
     .contato .bloco{
         width: 100%;
     }
-    
-    .cronograma .dias ul{
-        display: contents;
-    }
-
-    .cronograma .cardcrono{
-        max-width: 100%;
-    }
 }
 
 @media (max-width: 500px){
@@ -348,7 +467,8 @@ footer .container li{
     }
 
     main .container .main-text h1,
-    main .container .main-textcrono h1{
+    main .container .main-textcrono h1,
+    main .container .main-textpatro h1{
         font-size: 3rem;
     }
 }
