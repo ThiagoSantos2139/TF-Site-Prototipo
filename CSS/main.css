@@ -459,6 +459,10 @@ footer .container li{
     .contato .bloco{
         width: 100%;
     }
+
+    .organizacao .area h1{
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 500px){
@@ -470,5 +474,14 @@ footer .container li{
     main .container .main-textcrono h1,
     main .container .main-textpatro h1{
         font-size: 3rem;
+    }
+
+    .organizacao .area h1{
+        font-size: 2rem;
+    }
+    main .container .main-text h1,
+    main .container .main-textcrono h1,
+    main .container .main-patro h1{
+        font-size: 2rem;
     }
 }
