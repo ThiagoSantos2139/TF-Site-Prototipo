@@ -196,7 +196,7 @@ main .container{
 }
 
 .cronograma .cardcrono{
-    max-width: 20%;
+    max-width: 100%;
     cursor: pointer;
     padding: 30px;
     border-radius: 15px;
