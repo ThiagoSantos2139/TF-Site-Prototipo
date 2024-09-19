@@ -133,6 +133,8 @@ main .container{
 
 .patrocina .card{
     width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .patrocina .card p{
@@ -189,7 +191,7 @@ main .container{
 }
 
 .cronograma .dias ul{
-    display: flex;
+    display: contents;
     justify-content: space-between;
 }
 
@@ -206,29 +208,29 @@ main .container{
     box-shadow: 0px 10px 60px 8px var(--blocohover);
 }
 
-.carousel{
+.patrocina .container .card .carousel{
     width: 100%;
-    height: 700px;
+    height: 500px;
     position: relative;
 }
 
-.slides{
+.patrocina .container .card .carousel .slides{
     width: 100%;
-    height: 100%;
+    height: 400px;
     position: absolute;
+    object-fit: cover;
+    display: grid;
+    place-items: center;
 }
 
-.slide{
-    width: 100%;
-    height: 80%;
+.patrocina .container .card .carousel .slides .slide{
     position: absolute;
     display: none;
 }
 
-.slide img{
+.patrocina .container .card .carousel .slides .slide a img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-height: 400px;
 }
 
 .navigation{
@@ -251,7 +253,9 @@ main .container{
 
 #slide1:checked ~ .slides .slide:nth-child(1),
 #slide2:checked ~ .slides .slide:nth-child(2),
-#slide3:checked ~ .slides .slide:nth-child(3){
+#slide3:checked ~ .slides .slide:nth-child(3),
+#slide4:checked ~ .slides .slide:nth-child(4),
+#slide5:checked ~ .slides .slide:nth-child(5){
     display: block;
 }
 
@@ -264,7 +268,7 @@ main .container{
     margin: 30px auto;
 }
 
-.gold{
+.patrocinadores .container .goldall .gold{
     border-radius: 30px;
     background-color: rgb(246, 195, 13);
     width: 100%;
@@ -274,7 +278,30 @@ main .container{
     text-align: center;
 }
 
-.silver{
+.patrocinadores .container .goldall .goldcard{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.patrocinadores .container .goldall .goldcard .carda{
+    width: 50%;
+    align-content: center;
+}
+
+.patrocinadores .container .goldall .goldcard .carda a img{
+    width: 100%;
+}
+
+.patrocinadores .container .goldall .goldcard .carda a p{
+    width: 80%;
+    display: flex;
+    align-items: center;
+
+}
+
+.patrocinadores .container .silver{
     border-radius: 30px;
     background-color: rgb(115, 115, 115);
     width: 100%;
@@ -284,7 +311,25 @@ main .container{
     text-align: center;
 }
 
-.bronze{
+.patrocinadores .container .silverall .silvercard{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.patrocinadores .container .silverall .silvercard .carda{
+    width: 40%;
+    align-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.patrocinadores .container .silverall .silvercard .carda a img{
+    width: 100%;
+}
+
+.patrocinadores .container .bronze{
     border-radius: 30px;
     background-color: #cd7f32;
     width: 100%;
@@ -292,6 +337,24 @@ main .container{
     font-size: 2rem;
     color: #ffffff;
     text-align: center;
+}
+
+.patrocinadores .container .bronzeall .bronzecard{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.patrocinadores .container .bronzeall .bronzecard .carda{
+    width: 40%;
+    align-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.patrocinadores .container .bronzeall .bronzecard .carda img{
+    width: 100%;
 }
 
 .organizacao{
@@ -312,8 +375,12 @@ main .container{
     width: 95%;
     text-align: center;
     margin-bottom: 20px;
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 800;
+}
+
+.organizacao .area h2{
+    font-size: 1,5rem;
 }
 
 .organizacao h2 a:link{
@@ -378,13 +445,15 @@ footer .container li{
 
 /* responsividade */
 @media (max-width: 1360px){
-    .cronograma .dias ul{
-        display: contents;
-    }
-
     .cronograma .cardcrono{
         max-width: 100%;
     }
+
+    .main-text h2,
+    .main-textcrono h2,
+    .main-textpatro h2{
+    font-size: 1rem;
+}
 }
 
 @media (max-width: 1180px){
@@ -448,8 +517,43 @@ footer .container li{
     }
 
     .patrocina .container .card img{
+        width: 80%;
+    }
+
+    .gold{
+        font-size: 2.5rem;
+    }
+
+    .patrocinadores .container .goldall .goldcard{
+        display: grid;
+    }
+    
+    .patrocinadores .container .goldall .goldcard .carda{
         width: 100%;
-        align-self: center;
+    }
+    
+    .patrocinadores .container .silverall .silvercard{
+        display: grid;
+    }
+    
+    .patrocinadores .container .silverall .silvercard .carda{
+        width: 100%;
+    }
+    
+    .patrocinadores .container .bronzeall .bronzecard{
+        display: grid;
+    }
+    
+    .patrocinadores .container .bronzeall .bronzecard .carda{
+        width: 100%;
+    }
+
+    .silver{
+        font-size: 2rem;
+    }
+    
+    .bronze{
+        font-size: 1.5rem;
     }
 
     .contato .container{
@@ -468,6 +572,18 @@ footer .container li{
 @media (max-width: 500px){
     .card p{
         font-size: 15px;
+    }
+
+    .patrocinadores .container .goldall .gold{
+        font-size: 2rem;
+    }
+
+    .patrocinadores .container .silverall .silver{
+        font-size: 2rem;
+    }
+
+    .patrocinadores .container .bronzerall .bronze{
+        font-size: 2rem;
     }
 
     main .container .main-text h1,
