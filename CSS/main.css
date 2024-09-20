@@ -254,8 +254,7 @@ main .container{
 #slide1:checked ~ .slides .slide:nth-child(1),
 #slide2:checked ~ .slides .slide:nth-child(2),
 #slide3:checked ~ .slides .slide:nth-child(3),
-#slide4:checked ~ .slides .slide:nth-child(4),
-#slide5:checked ~ .slides .slide:nth-child(5){
+#slide4:checked ~ .slides .slide:nth-child(4){
     display: block;
 }
 
